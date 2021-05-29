@@ -1,0 +1,80 @@
+body{
+	background-color: #43d6be;
+}
+#desl{
+	position: absolute;
+	top:10%;
+	left: 1%;
+	background-color: #40394a;
+	width: 11%;
+	height: 50%;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: grey;
+}
+#desr{
+	position: absolute;
+	top:10%;
+	right: 1%;
+	background-color: #40394a;
+	width: 11%;
+	height: 50%;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: grey;
+}
+#sing{
+	position: absolute;
+	top:35%;
+	left: 32%;
+	background-color: #3d334b;
+	opacity: 0.9;
+	height: 20%;
+	width: 36%;
+	border-radius: 15px;
+	border-style: double;
+	border-color: grey;
+}
+#multi{
+	position: absolute;
+	top:58%;
+	left: 32%;
+	background-color: #3d334b;
+	opacity: 0.9;
+	height: 20%;
+	width: 36%;
+	border-radius: 15px;
+	border-style: double;
+	border-color: grey;
+}
+#but{
+	position: relative;
+	top:15%;
+	left: 20%;
+	background-color: #3d334b;
+	opacity: 0.9;
+	height: 35%;
+	width: 60%;
+	border-radius: 15px;
+	color: white;
+	font-size: 150%;
+}
+#but2{
+	position: relative;
+	top:25%;
+	left: 20%;
+	background-color: #3d334b;
+	opacity: 0.9;
+	height: 35%;
+	width: 60%;
+	border-radius: 15px;
+	color: white;
+	font-size: 150%;
+}
+p{
+	padding: 5px;
+	font-size: 125%;
+	color: white;
+	position: relative;
+	left:35%;
+}

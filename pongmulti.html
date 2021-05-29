@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title>Ping Pong</title>
+<link rel="icon" href="p.png">
+<link rel="stylesheet" type="text/css" href="pongmulti.css">
+<body>
+
+<canvas id="pinpon" height=600 width=1000
+style="padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 100%;
+    background-attachment: fixed;">
+</canvas>
+
+<script>
+const canvas = document.getElementById("pinpon");
+const context= canvas.getContext("2d");
+const user={
+	x:0,
+	y:canvas.height/2-100/2,
+	width: 10,
+	height:100,
+	color:'red',
+	score:0
+}
+const com={
+	x:canvas.width-10,
+	y:canvas.height/2-100/2,
+	width: 10,
+	height:100,
+	color:'red',
+	score:0
+}
+const ball={
+	x:canvas.width/2,
+	y:canvas.width/2,
+	radius : 10,
+	speed : 5,
+	velx : 5,
+	vely : 5,
+	color : "green"
+}
+const net ={
+	x : canvas.width/2-1,
+	y : 0,
+	width : 2,
+	height : 10,
+	color : "white"
+}
+function drawnet(){
+   for(let i=0;i<=canvas.height; i+=15){
+   	drawrect(net.x,net.y+i,net.width,net.height,net.color);
+   }
+}
+function drawrect(x,y,w,h,color){
+      context.fillStyle= color;
+      context.fillRect(x,y,w,h);
+}
+
+
+function drawcir(x,y,r,color){
+	context.fillStyle=color;
+	context.beginPath();
+	context.arc(x,y,r,0,Math.PI*2,false);
+	context.closePath();
+	context.fill();
+}
+// drawcir(100,100,50,"white");
+function drawtext(text,x,y,color){
+	context.fillStyle=color;
+	context.font="50px fantasy";
+	context.fillText(text,x,y);
+	// context.fontSize="25px";
+}
+drawrect(0,0,canvas.width,canvas.height,"grey");
+    drawnet();
+    drawtext(user.score,canvas.width/4,canvas.height/5,"black");
+    drawtext(com.score,3*canvas.width/4,canvas.height/5,"black");
+    drawtext("↑ W",0,220,"yellow");
+    drawtext("↓ S",0,410,"yellow");
+    drawtext("upper arrow ↑",canvas.width-364,220,"yellow");
+    drawtext("lower arrow ↓",canvas.width-350,410,"yellow");
+    drawrect(user.x,user.y,user.width,user.height,user.color);
+    drawrect(com.x,com.y,com.width,com.height,com.color);
+    drawcir(ball.x,ball.y,ball.radius,ball.color);
+</script>
+<div id="desl"><p>Deviation of ball can be created once, everytime after ball hits the paddle.</p>
+	<p>Left player can increase speed of ball by pressing <span style="color: yellow">D</span> and can change direction of ball by pressing <span style="color: yellow">A</span> </p></div>
+<div id="desr"><p>Deviation of ball can be created once, everytime after ball hits the paddle.</p>
+	<p>Right player can increase speed of ball by pressing <span style="color: yellow">Right arrow key</span> and can change direction of ball by pressing <span style="color: yellow">Left arrow key</span> </p></div>
+<div id="start"><a href="pongmuleas.html"><button id="but">Start</button></div>
+</body>
+</html>
